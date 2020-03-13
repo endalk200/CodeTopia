@@ -3,4 +3,14 @@
 // --------------------------------------------------------------------
 
 // Forms
-
+.form-control {
+    border-radius: 0 !important;
+    &:focus{
+        box-shadow: none;
+        border-color: $form-focus-color;
+    }
+}
+.errorlist {
+    color: red !important;
+    letter-spacing: .08em;
+}
