@@ -1,32 +1,36 @@
 	<!--- Navbar --->
-	<nav class="navbar navbar-expand-lg">
+	<nav class="navbar z-depth-1 mb-3 navbar-expand-lg">
 		<div class="container">
-			<a class="navbar-brand text-white" href="#"><i class="fa fa-graduation-cap fa-lg mr-2"></i>BLOG</a>
+			<a class="navbar-brand text-white" href="{% url 'homepage' %}">
+                CodeTopia
+            </a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="nvbCollapse">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item pl-1">
-						<a class="nav-link" href="#"><i class="fa fa-home fa-fw mr-1"></i>Anasayfa</a>
-					</li>
-					<li class="nav-item active pl-1">
-						<a class="nav-link" href="#"><i class="fa fa-th-list fa-fw mr-1"></i>Blog</a>
-					</li>
-					<li class="nav-item pl-1">
-						<a class="nav-link" href="#"><i class="fa fa-info-circle fa-fw mr-1"></i>Hakkımızda</a>
-					</li>
-					<li class="nav-item pl-1">
-						<a class="nav-link" href="#"><i class="fa fa-phone fa-fw fa-rotate-180 mr-1"></i>İletişim</a>
-					</li>
-					<li class="nav-item pl-1">
-						<a class="nav-link" href="#"><i class="fa fa-user-plus fa-fw mr-1"></i>Kayıt Ol</a>
-					</li>
-					<li class="nav-item pl-1">
-						<a class="nav-link" href="#"><i class="fa fa-sign-in fa-fw mr-1"></i>Oturum Aç</a>
-					</li>
+						<a class="nav-link" href="{% url 'blog:blog_homepage' %}"></i>Blog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Account
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% if user.is_autheticated %}
+                                <a class="dropdown-item" href="{% url 'account:user_dashboard' %}">Dashboard</a>
+                                <a class="dropdown-item" href="{% url 'account:user_logout' %}">Logout</a>
+                            {% else %}
+                                <a class="dropdown-item" href="{% url 'account:user_login' %}">Login</a>
+                                <a class="dropdown-item" href="{% url 'account:create_user' %}">Sign up</a>
+                            {% endif %}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<!--# Navbar #-->
+    <!--# Navbar #-->
