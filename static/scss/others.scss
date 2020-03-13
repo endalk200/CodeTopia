@@ -9,3 +9,41 @@
     border-radius: 0 !important;
     border: none !important;
 }
+
+// Jumbotron
+.jumbotron {
+    border-radius: 0 !important;
+}
+
+// list-group
+.list-group {
+    .list-group-item {
+        border: none !important;
+    }
+}
+
+// link
+a {
+    text-decoration: none !important;
+    color: $primary;
+    
+    /* unvisited link */
+    &:link {
+        color: $primary;
+    }
+
+    /* visited link */
+    &:visited {
+        color: $info;
+    }
+
+    /* mouse over link */
+    &:hover {
+        color: $success;
+    }
+
+    /* selected link */
+    &:active {
+        color: blue;
+    }
+}

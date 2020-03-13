@@ -5,9 +5,12 @@
 // Forms
 .form-control {
     border-radius: 0 !important;
+    transition: all ease-in-out .3s !important;
+
     &:focus{
         box-shadow: none;
         border-color: $form-focus-color;
+        border-left: 5px $primary solid;
     }
 }
 .errorlist {
