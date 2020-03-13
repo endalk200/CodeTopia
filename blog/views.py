@@ -110,12 +110,14 @@ class CreateBlog(View):
         context.update(**(self.extra_context or {}))
         return context
 
+    @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
         self.extra_context = {
             "form": self.get_form_class()
         }
         return render(request=self.request, template_name=self.template_name, context=self.get_context_data())
 
+    @method_decorator(login_required)
     @method_decorator(sensitive_post_parameters())
     @method_decorator(csrf_protect)
     def post(self, *args, **kwargs):
