@@ -1,2 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["_global_variables.scss"],"names":[],"mappings":"AAIA,WACI,2BAEJ,WACI,+EAEJ,gBACI,gFAEJ,WACI,+EAEJ,WACI,kFAEJ,WACI,kFAEJ,WACI","file":"main.css"}
-
+{"version":3,"sourceRoot":"","sources":["_global_variables.scss","_navbar.scss","_variable.scss","_colors.scss"],"names":[],"mappings":"AAIA,WACI,2BAEJ,WACI,+EAEJ,gBACI,gFAEJ,WACI,+EAEJ,WACI,kFAEJ,WACI,kFAEJ,WACI,iFCnBJ,QACI,iBCQgB,QDNZ,8BACI,WAEJ,oCACI,MENC,QFQL,sCACI,METC,QFYT,wBACI","file":"main.css"}
