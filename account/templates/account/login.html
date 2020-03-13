@@ -28,7 +28,8 @@
                     <label class="form-check-label" for="exampleCheck1">Remember me.</label>
                 </div>
                 <div class="form-group">
-                    <small>Forgot password? <a href="{% url 'account:user_password_reset' %}">reset here</a></small>
+                    <small>Forgot password? <a href="{% url 'account:user_password_reset' %}">reset here</a></small> <br>
+                    <small>Don't have ana account? <a href="{% url 'account:create_user' %}">create account</a></small>
                 </div>
                 <button class="btn login-btn btn-primary" type="submit"> <span>Login</span> </button>
             </form>
