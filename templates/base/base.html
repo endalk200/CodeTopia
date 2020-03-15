@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title>
+    {% static 'scss/plugin/bootstrap.min.css' as bootstrap_css %}
+    <link rel="stylesheet" href="{{ bootstrap_css }}">
     {% static 'scss/main.css' as main_css %}
     <link rel="stylesheet" href="{{ main_css }}">
     {% block header %}
@@ -19,6 +21,12 @@
 
     {% include 'base/footer.html' %}
 </body>
+{% static 'js/plugin/jquery_slim.min.js' as slim_jquery %}
+<script src="{{ slim_jquery }}"></script>
+{% static 'js/plugin/popper.min.js' as popper_js %}
+<script src="{{ popper_js }}"></script>
+{% static 'js/plugin/bootstrap.min.js' as bootstrap_js %}
+<script src="{{ bootstrap_js }}"></script>
 {% static 'js/main.js' as main_js %}
 <script src="{{ main_js }}"></script>
 {% block scripts %}

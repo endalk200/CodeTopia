@@ -2,73 +2,9 @@
 // Color Library
 // --------------------------------------------------------------------
 
-// Colors
-
-$black-base: #000 !default;
-$white-base: #fff !default;
-$foggy-grey: #4f4f4f !default;
-
-// ====Red
-$red-lighten-5:  #ffebee !default;
-$red-lighten-4:  #ffcdd2 !default;
-$red-lighten-3:  #ef9a9a !default;
-$red-lighten-2:  #e57373 !default;
-$red-lighten-1:  #ef5350 !default;
-$red-base:       #f44336 !default;
-$red-darken-1:   #e53935 !default;
-$red-darken-2:   #d32f2f !default;
-$red-darken-3:   #c62828 !default;
-$red-darken-4:   #b71c1c !default;
-$red-accent-1:   #ff8a80 !default;
-$red-accent-2:   #ff5252 !default;
-$red-accent-3:   #ff1744 !default;
-$red-accent-4:   #d50000 !default;
-
-//====Green
-$green-lighten-5:  #e8f5e9 !default;
-$green-lighten-4:  #c8e6c9 !default;
-$green-lighten-3:  #a5d6a7 !default;
-$green-lighten-2:  #81c784 !default;
-$green-lighten-1:  #66bb6a !default;
-$green-base:       #4caf50 !default;
-$green-darken-1:   #43a047 !default;
-$green-darken-2:   #388e3c !default;
-$green-darken-3:   #2e7d32 !default;
-$green-darken-4:   #1b5e20 !default;
-$green-accent-1:   #b9f6ca !default;
-$green-accent-2:   #69f0ae !default;
-$green-accent-3:   #00e676 !default;
-$green-accent-4:   #00c853 !default;
-
-//====Light Green
-$light-green-lighten-5:  #f1f8e9 !default;
-$light-green-lighten-4:  #dcedc8 !default;
-$light-green-lighten-3:  #c5e1a5 !default;
-$light-green-lighten-2:  #aed581 !default;
-$light-green-lighten-1:  #9ccc65 !default;
-$light-green-base:       #8bc34a !default;
-$light-green-darken-1:   #7cb342 !default;
-$light-green-darken-2:   #689f38 !default;
-$light-green-darken-3:   #558b2f !default;
-$light-green-darken-4:   #33691e !default;
-$light-green-accent-1:   #ccff90 !default;
-$light-green-accent-2:   #b2ff59 !default;
-$light-green-accent-3:   #76ff03 !default;
-$light-green-accent-4:   #64dd17 !default;
-
 // Button Colors
 $primary:    #44c767 !default;
 $success:    #4CAF50 !default;
 $info:       #38a4ff !default;
 $warning:    #f4e700 !default;
 $danger:     #f54940 !default;
-
-$grey-base:       #9e9e9e !default;
-
-$info-color:           #33b5e5 !default;
-$info-color-dark:      #0099cc !default;
-$success-color:        #00c851 !default;
-$success-color-dark:   #007e33 !default;
-$warning-color:        #ffbb33 !default;
-$warning-color-dark:   #ff8800 !default;
-$error-color:          $red-base !default;

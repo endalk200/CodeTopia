@@ -6,29 +6,32 @@
 
 {% block content %}
 
-<h1>
-  <img src="{{ passed_user.profile.profile_picture.url }}" width="50" height="50" alt="{{ passed_user.username }}s Profile Picture"> 
-  Wellcome {{ passed_user.username }} to your dashboard
-</h1>
+<div class="container">
+  <h1>
+    <img src="{{ passed_user.profile.profile_picture.url }}" width="50" height="50"
+      alt="{{ passed_user.username }}s Profile Picture">
+    Wellcome {{ passed_user.username }} to your dashboard
+  </h1>
 
-<hr>
-<a href="{% url 'account:change_user_password' request.user.username %}">Change Password</a>
-<a href="{% url 'account:update_profile' request.user.username %}">Update Profile</a>
+  <hr>
+  <a href="{% url 'account:change_user_password' request.user.username %}">Change Password</a>
+  <a href="{% url 'account:update_profile' request.user.username %}">Update Profile</a>
 
-<table class="table-hover">
-  <tr class="thead-success">
-    <th>username</th>
-    <th>first name</th>
-    <th>last name</th>
-    <th>email</th>
-  </tr>
-  <tr>
-    <td>{{ request.user.username }}</td>
-    <td>{{ request.user.first_name }}</td>
-    <td>{{ request.user.last_name }}</td>
-    <td>{{ request.user.email }}</td>
-  </tr>
-</table>
+  <table class="table-hover">
+    <tr class="thead-success">
+      <th>username</th>
+      <th>first name</th>
+      <th>last name</th>
+      <th>email</th>
+    </tr>
+    <tr>
+      <td>{{ request.user.username }}</td>
+      <td>{{ request.user.first_name }}</td>
+      <td>{{ request.user.last_name }}</td>
+      <td>{{ request.user.email }}</td>
+    </tr>
+  </table>
+</div>
 
 
 {% endblock content %}

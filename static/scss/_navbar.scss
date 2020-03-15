@@ -3,33 +3,19 @@
 
 // Navbar
 .navbar {
-    box-shadow: $z-depth-1;
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
+    background-color: $navbar_bg_color; 
+    .navbar-nav {
+        .nav-link { 
+            color: #fff; 
+        }
+        .nav-link:hover { 
+            color: $primary; 
+        }
+        .active > .nav-link { 
+            color: $primary; 
+        }
     }
-    
-    li {
-        float: left;
-    }
-    
-    li a {
-        display: block;
+    .navbar-toggler-icon {
         color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-    
-    li a:hover:not(.active) {
-        background-color: #111;
-    }
-    
-    .active {
-        background-color: #4CAF50;
     }
 }

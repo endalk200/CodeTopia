@@ -18,7 +18,5 @@ notifications:
             - eb808826@gmail.com
 
 script:
-    - flake8
-    - python manage.py makemigrations
-    - python manage.py migrate
-    - python manage.py test
+    - make migrate_all
+    - make travis_test

@@ -1,4 +1,3 @@
-import "./lib/handlebar.js"
 
 function show_password(form_id:string) {
     // function for revealing password data from password field
@@ -41,7 +40,36 @@ function copy_to_clipboard(input_id:string){
 }
 
 function disable_btn(btn_id:string) {
-    document.getElementById(btn_id).disabled = true;
+    console.log("hello")
 }
 
-export { copy_to_clipboard, caps_lock_on, show_password, disable_btn }
+function nav_toggler() {
+    var x = document.getElementById("navbar");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+
+function navSlide() {
+    const toggler:any = document.querySelector(".toggler")
+    const nav:any = document.querySelector(".nav-links")
+    const navLinks:any = document.querySelectorAll(".nav-links li")
+
+    toggler.addEventListener("click", () => {
+        nav.classList.toggle("nav-active")
+
+        navLinks.forEach((link:any, index:number) => {
+            if (link.style.animation) {
+                link.style.animation = ""
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 }s`
+            }
+        })
+
+        toggler.classList.toggle("toggle")
+    })
+}
+
+navSlide()

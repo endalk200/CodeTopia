@@ -1,0 +1,38 @@
+{
+  "name": "codetopia",
+  "version": "1.0.0",
+  "description": "Javascript, sass, css library package manager",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile_ts": "webpack",
+    "compile_mini_ts": "uglifyjs --compress --output ./static/js/bundle.js ./static/js/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endalk200/CodeTopia.git"
+  },
+  "keywords": [
+    "sass",
+    "typescript",
+    "css",
+    "javascript"
+  ],
+  "author": "Endalkachew Biruk",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/endalk200/CodeTopia/issues"
+  },
+  "homepage": "https://github.com/endalk200/CodeTopia#readme",
+  "devDependencies": {
+    "sass": "^1.25.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "uglify-js": "^3.7.7",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}

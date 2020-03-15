@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron py-5 z-depth-3">
+        <h1 class="h1">Wellcome to CodeTopia Blog!</h1>
+        <p class="lead">
+            Read interesting articles on various tech related topics. You can also created your own articles.
+        </p>
+        <hr class="my-4">
+        <p>
+            Create your blog using markdown syntax to make your blog look better. 
+            Our markdown converter engine will convert your blog to HTML.
+        </p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Create Blog</a>
+    </div>
+
+    <div class="z-depth-2">
+        <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item">
+                <a href="{% url 'blog:create_blog' %}">Create blog</a>
+            </li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+        </ul>
+    </div>
+
+    {% for blog in blogs %}
+        <div class="card z-depth-1-half my-2">
+            {% autoescape off %}
+                <div class="card-body">
+                    <a href="{{ blog.get_absolute_url|safe }}"><h5 class="card-title">{{ blog.title }}</h5></a>
+                    <p class="card-text">{{ blog.subject }}</p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            {% endautoescape %}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}
