@@ -6,30 +6,63 @@
 
 {% block content %}
 
-<div class="container">
-  <h1>
-    <img src="{{ passed_user.profile.profile_picture.url }}" width="50" height="50"
-      alt="{{ passed_user.username }}s Profile Picture">
-    Wellcome {{ passed_user.username }} to your dashboard
-  </h1>
+<div class="jumbotron z-depth-2 mb-3 text-center py-4">
+  <img class="rounded-circle" src="{{ passed_user.profile.profile_picture.url }}" width="100" height="100"
+    alt="{{ passed_user.username }}s Profile Picture">
+  <h1 class="h1">Wellcome to CodeTopia {{ request.user.first_name }}</h1>
+  <p class="lead">
+    {{ request.user.profile.short_bio }}
+  </p>
+  <hr class="my-4">
+  <div class="container z-depth-1-half">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
-  <hr>
-  <a href="{% url 'account:change_user_password' request.user.username %}">Change Password</a>
-  <a href="{% url 'account:update_profile' request.user.username %}">Update Profile</a>
-
-  <table class="table-hover">
-    <tr class="thead-success">
-      <th>username</th>
-      <th>first name</th>
-      <th>last name</th>
-      <th>email</th>
-    </tr>
-    <tr>
-      <td>{{ request.user.username }}</td>
-      <td>{{ request.user.first_name }}</td>
-      <td>{{ request.user.last_name }}</td>
-      <td>{{ request.user.email }}</td>
-    </tr>
+<div class="container z-depth-5 py-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
   </table>
 </div>
 
