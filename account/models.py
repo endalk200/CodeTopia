@@ -65,6 +65,18 @@ class Profile(models.Model):
         max_length=13, null=True, blank=True
     )
 
+    country = models.CharField(
+        verbose_name=_("Country:"),
+        max_length=20
+    )
+
+    availability = models.CharField(
+        verbose_name=_("Availability"),
+        max_length=50,
+        help_text=_("wether you're available for collaboration with other ", 
+                    "developers on theire either Open Source or Private projects")
+    )
+
     github_url = models.URLField(
         verbose_name=_('Github homepage URL.'), 
         max_length=150, blank=True, null=True
