@@ -125,9 +125,9 @@ class CreateBlog(View):
         if form.is_valid():
             blog = form.save(commit=False)
             blog.author = self.request.user
-            blog.title = markdown2.markdown(text=form.cleaned_data.get("title"))
-            blog.subject = markdown2.markdown(text=form.cleaned_data.get("subject"))
-            blog.body = markdown2.markdown(text=form.cleaned_data.get("body"))
+            # blog.title = markdown2.markdown(text=form.cleaned_data.get("title"))
+            # blog.subject = markdown2.markdown(text=form.cleaned_data.get("subject"))
+            # blog.body = markdown2.markdown(text=form.cleaned_data.get("body"))
             blog.save()
             messages.success(
                 request=self.request, 

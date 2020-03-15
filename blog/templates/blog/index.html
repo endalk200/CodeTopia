@@ -35,7 +35,7 @@
             {% autoescape off %}
                 <div class="card-body">
                     <a href="{{ blog.get_absolute_url|safe }}"><h5 class="card-title">{{ blog.title }}</h5></a>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">{{ blog.subject }}</p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
             {% endautoescape %}
