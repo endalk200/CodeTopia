@@ -68,6 +68,7 @@ class Profile(models.Model):
 
     country = models.CharField(
         verbose_name=_("Country"),
+        null=True, blank=True,
         max_length=20
     )
 
@@ -104,6 +105,7 @@ class Profile(models.Model):
     availability = models.CharField(
         verbose_name=_("Availability"),
         max_length=50,
+        null=True, blank=True,
         help_text=_("wether you're available for collaboration with other \
         developers on theire either Open Source or Private projects")
     )

@@ -41,12 +41,12 @@ from django.views.decorators.csrf import csrf_protect
 # Decorator for protecting clickjack attack
 from django.views.decorators.clickjacking import xframe_options_exempt
 # Browsers that support X-Frame-Options
-    # Internet Explorer 8+
-    # Edge
-    # Firefox 3.6.9+
-    # Opera 10.5+
-    # Safari 4+
-    # Chrome 4.1+
+# Internet Explorer 8+
+# Edge
+# Firefox 3.6.9+
+# Opera 10.5+
+# Safari 4+
+# Chrome 4.1+
 
 from django.utils.translation import gettext, gettext_lazy as _
 from django.utils.http import (
