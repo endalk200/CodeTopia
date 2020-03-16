@@ -47,6 +47,13 @@ class Profile(models.Model):
         verbose_name=_("related_user"), 
         on_delete=models.CASCADE
     )
+
+    phone_number_1 = models.CharField(verbose_name=_("First Phone Number"), max_length=13)
+    phone_number_2 = models.CharField(
+        verbose_name=_("Second Phone Number"), 
+        max_length=13, null=True, blank=True
+    )
+
     profile_picture = models.ImageField(
         default=get_default_profile_pic_path,
         upload_to=get_profile_pic_path, 
@@ -59,22 +66,10 @@ class Profile(models.Model):
         max_length=30
     )
 
-    phone_number_1 = models.CharField(verbose_name=_("First Phone Number"), max_length=13)
-    phone_number_2 = models.CharField(
-        verbose_name=_("Second Phone Number"), 
-        max_length=13, null=True, blank=True
-    )
-
     country = models.CharField(
-        verbose_name=_("Country:"),
+        verbose_name=_("Country"),
+        null=True, blank=True,
         max_length=20
-    )
-
-    availability = models.CharField(
-        verbose_name=_("Availability"),
-        max_length=50,
-        help_text=_("wether you're available for collaboration with other ", 
-                    "developers on theire either Open Source or Private projects")
     )
 
     github_url = models.URLField(
@@ -105,6 +100,14 @@ class Profile(models.Model):
     bio = models.CharField(
         verbose_name=_('Bio'), 
         max_length=2000, blank=True, null=True
+    )
+
+    availability = models.CharField(
+        verbose_name=_("Availability"),
+        max_length=50,
+        null=True, blank=True,
+        help_text=_("wether you're available for collaboration with other \
+        developers on theire either Open Source or Private projects")
     )
 
     objects = models.Manager()
