@@ -47,6 +47,13 @@ class Profile(models.Model):
         verbose_name=_("related_user"), 
         on_delete=models.CASCADE
     )
+
+    phone_number_1 = models.CharField(verbose_name=_("First Phone Number"), max_length=13)
+    phone_number_2 = models.CharField(
+        verbose_name=_("Second Phone Number"), 
+        max_length=13, null=True, blank=True
+    )
+
     profile_picture = models.ImageField(
         default=get_default_profile_pic_path,
         upload_to=get_profile_pic_path, 
@@ -57,12 +64,6 @@ class Profile(models.Model):
         verbose_name=_("Educational Background"), 
         choices=EducationBackground.choices, 
         max_length=30
-    )
-
-    phone_number_1 = models.CharField(verbose_name=_("First Phone Number"), max_length=13)
-    phone_number_2 = models.CharField(
-        verbose_name=_("Second Phone Number"), 
-        max_length=13, null=True, blank=True
     )
 
     github_url = models.URLField(
