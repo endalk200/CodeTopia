@@ -206,11 +206,46 @@ class ProfileUpdateForm(forms.ModelForm):
             },
         }
         widgets = {
+            'phone_number_1': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'phone_number_2': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'profile_picture': forms.FileInput(attrs={
+                'class': 'form-control'
+            }),
+            'education_background': forms.Select(attrs={
+                'class': 'form-control'
+            }),
+            'country': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'github_url': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'personal_url': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'facebook_account': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'twitter_account': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'linkedin_account': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
             'short_bio': forms.Textarea(attrs={
-                'cols': 80, 'rows': 20
+                'class': 'form-control',
+                'cols': 80, 'rows': 5
             }),
             'bio': forms.Textarea(attrs={
-                'cols': 80, 'rows': 20
+                'class': 'form-control',
+                'cols': 80, 'rows': 10
+            }),
+            'availability': forms.TextInput(attrs={
+                'class': 'form-control'
             }),
         }
 
@@ -261,6 +296,18 @@ class UserUpdateForm(forms.ModelForm):
         model = User
         fields = ["username", "first_name", "last_name", "email"]
         field_classes = {'username': UsernameField}
+
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control'
+            })
+        }
 
 
 class AuthenticationForm(forms.Form):
