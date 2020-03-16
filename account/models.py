@@ -66,6 +66,11 @@ class Profile(models.Model):
         max_length=30
     )
 
+    country = models.CharField(
+        verbose_name=_("Country:"),
+        max_length=20
+    )
+
     github_url = models.URLField(
         verbose_name=_('Github homepage URL.'), 
         max_length=150, blank=True, null=True
@@ -88,12 +93,19 @@ class Profile(models.Model):
     )
 
     short_bio = models.CharField(
-        verbose_name=_('Describe yourself'), 
-        max_length=60, blank=True, null=True
+        verbose_name=_('Short Bio'), 
+        max_length=100, blank=True, null=True
     )
     bio = models.CharField(
-        verbose_name=_('Short bio'), 
-        max_length=400, blank=True, null=True
+        verbose_name=_('Bio'), 
+        max_length=2000, blank=True, null=True
+    )
+
+    availability = models.CharField(
+        verbose_name=_("Availability"),
+        max_length=50,
+        help_text=_("wether you're available for collaboration with other ", 
+                    "developers on theire either Open Source or Private projects")
     )
 
     objects = models.Manager()
