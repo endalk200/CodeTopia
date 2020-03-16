@@ -168,9 +168,6 @@ class ProfileUpdate(View):
 
     template_name = "account/dashboard/profile_edit.html"
 
-    profile_form_class = ProfileUpdateForm
-    user_form_class = UserUpdateForm
-
     title = _('CodeTopia | Update Profile')
     extra_context = None
 
@@ -194,28 +191,21 @@ class ProfileUpdate(View):
         context.update(**(self.extra_context or {}))
         return context
 
-    def get_profile_form_class(self, *args, **kwargs):
-        """Return the instance of the for class to be used."""
-        return self.profile_form_class(*args)
-
-    def get_user_form_class(self, *args, **kwargs):
-        """Return the instance of the for class to be used."""
-        return self.user_form_class(*args)
-
+    @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
 
         self.extra_context = {
-            "user_form": self.user_form_class(instance=request.user),
-            "profile_form": self.profile_form_class(instance=request.user.profile)
+            "user_form": UserUpdateForm(instance=request.user),
+            "profile_form": ProfileUpdateForm(instance=request.user.profile)
         }
         return render(request=request, template_name=self.template_name, context=self.get_context_data())
 
     @method_decorator(sensitive_post_parameters())
     @method_decorator(csrf_protect)
+    @method_decorator(login_required)
     def post(self, request, *args, **kwargs):
-        user_form = self.user_form_class(instance=request.user, data=request.POST),
-        profile_form = self.profile_form_class(
-            instance=request.user.profile, 
+        user_form = UserUpdateForm(instance=request.user, data=request.POST),
+        profile_form = ProfileUpdateForm(
             data=request.POST, 
             files=request.FILES
         )
