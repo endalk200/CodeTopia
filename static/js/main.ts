@@ -1,5 +1,4 @@
 
-
 function show_password(form_id:string) {
     // function for revealing password data from password field
     var form_instance:any = document.getElementById(form_id);

@@ -2,3 +2,20 @@
 // --------------------------------------------------------------------
 
 // Navbar
+.navbar {
+    background-color: $navbar_bg_color; 
+    .navbar-nav {
+        .nav-link { 
+            color: #fff; 
+        }
+        .nav-link:hover { 
+            color: $primary; 
+        }
+        .active > .nav-link { 
+            color: $primary; 
+        }
+    }
+    .navbar-toggler-icon {
+        color: white;
+    }
+}

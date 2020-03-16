@@ -1,14 +1,135 @@
 // Buttons
 // --------------------------------------------------------------------
 
-// --------------------------------------------------------------------
-// Button Dimensions
+.btn {
+    border-radius: 0 !important;
+    border: none;
+    &:hover {
+        box-shadow: $z-depth-1-half;
+    }
+}
 
-// Common Button Dimensions
-// btn-vsm Dimensions
-// btn-sm Dimensions
-// btn-md Dimensions
-// btn-lg Dimensions
-// btn-xlg Dimensions
+.btn-primary {
+    border: none;
+    background-color: $primary !important;
+    border-color: none !important;
+}
 
-// --------------------------------------------------------------------
+.btn-danger {
+    border: none;
+    background-color: $danger !important;
+    border-color: none !important;
+}
+
+
+.login-btn {
+    transition: all 0.5s;
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    &:hover span {
+        padding-right: 25px;
+    }
+
+    &:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+.signup-btn {
+    transition: all 0.5s;
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    &:hover span {
+        padding-right: 25px;
+    }
+
+    &:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+.delete-btn {
+    transition: all 0.5s;
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    &:hover span {
+        padding-right: 25px;
+    }
+
+    &:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+.download-btn {
+    transition: all 0.5s;
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    &:hover span {
+        padding-right: 25px;
+    }
+
+    &:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+}

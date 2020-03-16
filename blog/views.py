@@ -110,12 +110,14 @@ class CreateBlog(View):
         context.update(**(self.extra_context or {}))
         return context
 
+    @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
         self.extra_context = {
             "form": self.get_form_class()
         }
         return render(request=self.request, template_name=self.template_name, context=self.get_context_data())
 
+    @method_decorator(login_required)
     @method_decorator(sensitive_post_parameters())
     @method_decorator(csrf_protect)
     def post(self, *args, **kwargs):
@@ -123,9 +125,9 @@ class CreateBlog(View):
         if form.is_valid():
             blog = form.save(commit=False)
             blog.author = self.request.user
-            blog.title = markdown2.markdown(text=form.cleaned_data.get("title"))
-            blog.subject = markdown2.markdown(text=form.cleaned_data.get("subject"))
-            blog.body = markdown2.markdown(text=form.cleaned_data.get("body"))
+            # blog.title = markdown2.markdown(text=form.cleaned_data.get("title"))
+            # blog.subject = markdown2.markdown(text=form.cleaned_data.get("subject"))
+            # blog.body = markdown2.markdown(text=form.cleaned_data.get("body"))
             blog.save()
             messages.success(
                 request=self.request, 

@@ -7,24 +7,43 @@
 {% block content %}
 
 <div class="container">
-    <ul>
-        <li><a href="{% url 'blog:create_blog' %}">create blog</a></li>
-    </ul>
-
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h3>Create Blog</h3>
-                <hr>
-                <form action="." method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn btn-primary" type="submit">Create Blog</button>
-                </form>
-            </div>
+    <div class="card z-depth-5">
+        <div class="card-body">
+            <h3 class="card-title">Create Blog</h3>
+            <hr>
+            <form action="{% url 'blog:create_blog' %}" method="POST">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="form-group">
+                    <label for="id_title">{{ form.title.label_tag }}</label>
+                    {{ form.title }}
+                    {% if form.title.errors %}
+                        <small id="emailHelp" class="form-text form-error text-muted">{{ form.title.errors }}</small>
+                    {% endif %}
+                    <small id="emailHelp" class="form-text text-muted">{{ form.title.help_text }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_username">{{ form.subject.label_tag }}</label>
+                    {{ form.subject }}
+                    {% if form.subject.errors %}
+                        <small id="emailHelp" class="form-text form-error text-muted">{{ form.subject.errors }}</small>
+                    {% endif %}
+                    <small id="emailHelp" class="form-text text-muted">{{ form.subject.help_text }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_body">{{ form.body.label_tag }}</label>
+                    {{ form.body }}
+                    {% if form.body.errors %}
+                        <small id="emailHelp" class="form-text form-error text-muted">{{ form.body.errors }}</small>
+                    {% endif %}
+                    <small id="emailHelp" class="form-text text-muted">{{ form.body.help_text }}</small>
+                </div>
+                <button class="btn btn-primary" type="submit">Create Blog</button>
+            </form>
         </div>
     </div>
 </div>
+
 
 {% endblock content %}
 

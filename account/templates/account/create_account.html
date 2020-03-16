@@ -7,14 +7,52 @@
 {% block content %}
 
 <div class="container">
-    <h1>Create account</h1>
-    <hr>
-    <form action="{% url 'account:create_user' %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <small>Already have an account <a href="{% url 'account:user_login' %}">Login here.</a></small> <br>
-        <button class="btn btn-primary" type="submit">Sign Up</button>
-    </form>
+    <div class="card z-depth-5">
+        <div class="card-body">
+            <h3 class="card-title">Create Account</h3>
+            <hr>
+            <form action="{% url 'account:create_user' %}" method="POST">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="form-group">
+                    <label for="id_username">{{ form.username.label_tag }}</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <small id="emailHelp" class="form-text form-error text-muted">{{ form.username.errors }}</small>
+                    {% endif %}
+                    <small id="emailHelp" class="form-text text-muted">{{ form.username.help_text }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_username">{{ form.email.label_tag }}</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <small id="emailHelp" class="form-text form-error text-muted">{{ form.email.errors }}</small>
+                    {% endif %}
+                    <small id="emailHelp" class="form-text text-muted">{{ form.email.help_text }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_password">{{ form.password1.label_tag }}</label>
+                    {{ form.password1 }}
+                    {% if form.password1.errors %}
+                        <small id="emailHelp" class="form-text form-error text-muted">{{ form.password2.errors }}</small>
+                    {% endif %}
+                    <small id="emailHelp" class="form-text text-muted">{{ form.password1.help_text }}</small>
+                </div>
+                <div class="form-group">
+                    <label for="id_password">{{ form.password2.label_tag }}</label>
+                    {{ form.password2 }}
+                    {% if form.password2.errors %}
+                        <small id="emailHelp" class="form-text form-error text-muted">{{ form.password2.errors }}</small>
+                    {% endif %}
+                    <small id="emailHelp" class="form-text text-muted">{{ form.password2.help_text }}</small>
+                </div>
+                <div class="form-group">
+                    <small>Already have an account <a href="{% url 'account:user_login' %}">Login here.</a></small>
+                </div>
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

@@ -58,7 +58,10 @@ class UsernameField(forms.CharField):
         """Return HTML form attribute set for UserName field from CharField"""
         return {
             **super().widget_attrs(widget),
-            "autofocus": True
+            "autofocus": True,
+            "class": "form-control",
+            "placeholder": "Enter Username",
+            "aria-describedby": "emailHelp"
             # add extra HTML attributes for UsernameField
         }
 
@@ -85,6 +88,8 @@ class UserCreationForm(forms.ModelForm):
     email = forms.EmailField(
         label=_("Email"),
         widget=forms.EmailInput(attrs={
+            "class": "form-control",
+            "placeholder": "Enter email",
             **widget_attributes
         }),
         help_text=help_texts.get("email_help_text")
@@ -94,6 +99,8 @@ class UserCreationForm(forms.ModelForm):
         label=_("Password"),
         strip=False,
         widget=forms.PasswordInput(attrs={
+            "class": "form-control",
+            "placeholder": "Enter password",
             **widget_attributes
         }),
         help_text=password_validation.password_validators_help_text_html(),
@@ -101,6 +108,8 @@ class UserCreationForm(forms.ModelForm):
     password2 = forms.CharField(
         label=_("Password confirmation"),
         widget=forms.PasswordInput(attrs={
+            "class": "form-control",
+            "placeholder": "Enter password again for confirmation",
             **widget_attributes
         }),
         strip=False,
@@ -264,6 +273,8 @@ class AuthenticationForm(forms.Form):
         strip=False,
         widget=forms.PasswordInput(attrs={
             "autocomplete": "current-password",
+            "class": "form-control",
+            "placeholder": "Enter Password"
             # add extra HTML attributes for password
         }),
     )
