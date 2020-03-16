@@ -99,12 +99,12 @@ class Profile(models.Model):
     )
 
     short_bio = models.CharField(
-        verbose_name=_('Describe yourself'), 
-        max_length=60, blank=True, null=True
+        verbose_name=_('Short Bio'), 
+        max_length=100, blank=True, null=True
     )
     bio = models.CharField(
-        verbose_name=_('Short bio'), 
-        max_length=400, blank=True, null=True
+        verbose_name=_('Bio'), 
+        max_length=2000, blank=True, null=True
     )
 
     objects = models.Manager()
