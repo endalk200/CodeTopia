@@ -84,12 +84,49 @@ WSGI_APPLICATION = 'CodeTopia.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+if os.environ.get("DATABASE") == "dbsqlite3" or os.environ.get("Database") is None:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, str(os.environ.get("DATABASE_NAME"))),
+        }
     }
-}
+
+elif os.environ.get("DATABASE") == "postgres":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get("DATABASE_NAME"),
+            'USER': os.environ.get("DATABASE_USER"),
+            'PASSWORD': os.environ.get("DATABASE_PASS"),
+            'HOST': 'db',
+            'PORT': 5432,
+        }
+    }
+
+elif os.environ.get("DATABASE") == "mysql":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'OPTIONS': {
+                'read_default_file': ''
+            }
+            # [client]
+            # database = DB_NAME
+            # host = localhost
+            # user = DB_USER
+            # password = DB_PASSWORD
+            # default-character-set = utf-8
+            # 'NAME': 'mydatabase',
+            # 'USER': 'mydatabaseuser',
+            # 'PASSWORD': 'mypassword',
+            # 'HOST': '127.0.0.1',
+            # 'PORT': '5432',
+        }
+    }
+
+
 
 
 # Password validation
