@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "==3.0.5"
+django = "==3.0.7"
 flake8 = "*"
 tox = "*"
 coverage = "*"
