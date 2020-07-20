@@ -1,12 +1,33 @@
-version: '3'
+version: "3"
 
 services:
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/code
-    ports:
-      - "8000:8000"
+    db:
+        image: postgres
+        environment: 
+            - POSTGRES_PASSWORD=postgres
+        volumes: 
+            - .:/usr/src/app
 
-# docker-compose run web django-admin startproject composeexample .
+    migration:
+        build: .
+        command: python3 manage.py migrate
+        depends_on: 
+            - db
+
+    web:
+        build:
+            context: .
+        environment: 
+            - DATABASE_NAME=postgres
+            - DATABASE_PASS=postgres
+            - DATABASE_USER=postgres
+            - DEBUG=True
+
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+                - .:/usr/src/app
+        ports:
+            - "8000:8000"
+        depends_on: 
+            - db
+            - migration
