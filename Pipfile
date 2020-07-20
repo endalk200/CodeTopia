@@ -6,12 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "==3.0.5"
-flake8 = "*"
-tox = "*"
-coverage = "*"
+django = "*"
 pillow = "*"
-markdown2 = "*"
 
 [requires]
-python_version = "3"
+python_version = "3.8"
