@@ -1,4 +1,11 @@
 
+<<<<<<< HEAD
+activate_env:
+	pipenv shell
+
+run: activate_env
+	python manage.py runserver 0.0.0.0:8000
+=======
 
 server:
 	python manage.py runserver
@@ -40,3 +47,4 @@ load_data:
 
 createsuperuser:
 	python manage.py createsuperuser --username root --email example@gmail.com
+>>>>>>> master
