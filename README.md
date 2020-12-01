@@ -2,6 +2,7 @@
 
 # CodeTopia
 
+
 ## :vulcan_salute: WELLCOME to CodeTopia.
 
 CodeTopia is Open source python web application for Ethiopian developers. CodeTopia is a platform where developers of every skill and background can learn how to code, collaborate on private and public projects and build theire resume for potential employers.
