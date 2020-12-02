@@ -1,3 +1,0 @@
-{% load i18n %}{% autoescape off %}
-{% blocktrans %}Wellcome to {{ site_name }} {{ user.username }}.{% endblocktrans %}
-{% endautoescape %}
