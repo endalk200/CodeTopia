@@ -2,26 +2,14 @@
 
 # CodeTopia
 
-
-## :vulcan_salute: WELLCOME to CodeTopia.
-
-CodeTopia is Open source python web application for Ethiopian developers. CodeTopia is a platform where developers of every skill and background can learn how to code, collaborate on private and public projects and build theire resume for potential employers.
-
-This web application is the first open source web application ever built by Ethiopian developers. By this project we aim to take Ethiopian Open Source collaboration to the next level. Open Source in Africa is not realy know and standard way of developing software and we hope culture of open source collaboration will trive in Africa especially in Ethiopia.
-
-## GOALS
-
-CodeTopia is Open Source Web application created by Ethiopian Developers and we hope to achieve the following goals:
-
-* Create a platform where new developers can learn computer science fundamentals and how to code from experienced developers.
-* Create a platform where developers working on theire own project can get help from experienced developers.
-* Create a platform for developers to boost theire resume by creating blogs that help new developers and potentially land freelance tutor job.
-* Create a platform for employers where they can find developers of every level from junior developer to highly talented senior developer.
-* Increase Ethiopian open source participation.
-* Create society where every interested party can increas knowledge, creativity and talent.
-
-**since this is open source project ideas are warmly wellcomed.**
+:vulcan_salute: **WELLCOME**. CodeTopia is Open source web application or platform. The main idea and aim for this platform is to give Ethiopian developers a community where they can advance there knowledge, advertise there skills and collaborate. There are many platforms that offers the same thing, but those platforms does not provide customized and unique experience tailored towards Ethiopian developers. That is what this project hopes to acheive. If your interested and want to read more about this idea read the [Manifesto documentation](https://github.com/EthiOpenSource/CodeTopia/blob/master/docs/Manifesto.md). 
 
 ## Contribute
+<hr>
 
-If you are interested in contributing to this project read [contributing doc](https://github.com/endalk200/CodeTopia/blob/master/docs/CONTRIBUTING.md).
+If you are interested in the idea and want to contribute to this project read [contributing documentation](https://github.com/EthiOpenSource/CodeTopia/blob/master/docs/CONTRIBUTING.md) to get started. To get involved in the community please use the Telegram goup or GitHub discussions. Your ideas and thoughts are highly needed.
+
+## LISCENSE
+<hr>
+
+Since this idea and project is huge undertaking developing the project in the open with the community is essential. The project uses
